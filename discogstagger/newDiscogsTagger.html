@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<link rel='icon' href='/icon.png' type='image/x-icon' />
+<nav class="navbar navbar-inverse navbar-fixed-top accented">
+    <!-- Styling for navbar -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        
+        <a class="navbar-brand" id='websiteTitle'>discogstagger</a>
+        
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+            <li><a href="http://martinbarker.me">Home</a></li>
+
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="http://martinbarker.me/projects">all projects</a></li>
+                    <li><a href="http://martinbarker.me/tagger">tagger</a></li>
+                    <li><a href='http://martinbarker.me/discogstagger'>discogstagger</a></li>
+                    <li><a href="http://decentralizedplaylist.com">decentralizedplaylist</a></li>
+                    <li><a href="https://github.com/MartinBarker/VLC-Radio">VLC Streaming Metadata</a></li>
+                    <li><a href="https://github.com/MartinBarker/VLC-Playlist-Randomizer">VLC Playlist Randomizer</a></li>
+                </ul>
+            </li>
+
+            <link rel="stylesheet"
+                href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <li><a href="https://github.com/MartinBarker">Github <i class="fa fa-github"></i></a></li>
+            <li><a href="mailto:martinbarker99@gmail.com">Email <i class="fa fa-envelope-o"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/martinbarker99">LinkedIn <i class="fa fa-linkedin-square"></i></a>
+            </li>
+            <li><a href="http://youtube.com/c/martinradio2">YouTube <i
+                        class="fa fa-youtube"></i></a></li>
+            <li><a href="http://www.martinradio.com">martinradio <i class="fa fa-music"></i></a></li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+<!-- Style-->
+<style type=text/css> 
+    #websiteTitle{ 
+        color:white; 
+    } 
+    body{ 
+        margin-top: 100px; 
+        text-align: center; 
+        overflow: auto; 
+    }
+    #urlInput{
+        text-align: center; 
+        width: 400px;
+    }
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    /* adjsutments table styling */
+    #adjustments {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 30%;
+    }
+
+    #adjustments td, #adjustments th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }   
+
+    #adjustments tr:nth-child(even){
+        background-color: #f2f2f2;
+    }
+
+    #adjustments th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: rgb(48, 48, 48);
+        color: white;
+    }   
+
+
+</style> 
+
+<head>
+    <title>discogstagger</title>
+    
+     
+    <script type="text/javascript" src="discogstagger_script.js" defer></script>
+</head>
+
+<body>
+
+    <h4 class="widgettitle"><strong>How to use:</strong></h4>
+                            
+    <li>Input a discogs release URL like so: </li>
+    <a href = "https://www.discogs.com/Le-Car-Auto-Biography/release/41048">https://www.discogs.com/Le-Car-Auto-Biography/release/41048</a> 
+    <li>Click 'submit' to generate a list of tags seperated by commas. </li>
+    <li>YouTube's character limit for tags is 458.</li>
+    <h4 class="widgettitle"><strong>Input:</strong></h4>
+    <div>
+        <form>
+            <input type="text" placeholder='Discogs release URL' name="url" id="urlInput">
+            <button name="data" type="button" onclick="getTags(document.getElementById('urlInput').value)">Submit</button>
+        </form>
+    </div>
+
+    <br>
+
+    <h4 class="widgettitle"><strong>Tags:</strong></h4>
+    <textarea id='tagsBox' rows="4" cols="50">
+            Input a url above and click submit !
+    </textarea>
+    <br>
+
+    <!--
+        TagLimit: 458
+        "asd,asd,gsdf,adgf,asf"
+    -->
+    <div id='tagsHelperStuff' >
+        <div id='charCount' >Number of characters: 0</div>  
+        <br>
+        <table align="center" id='adjustments' >
+                <tr>
+                  <th>Include</th>
+                  <th>Tags Type</th>
+                  <th>Depth</th>
+                </tr>
+
+                <tr>
+                  <td>
+                      <input type="checkbox" class='releaseArtistsCheckbox' id="releaseArtistsCheckbox" checked onchange="prepUpdateTagsBox()">
+                  </td>
+                  <td>Release Artist(s)</td>
+                  <td>
+                        <input type="range" class='releaseArtistsSlider' id='releaseArtistsSlider' min="0" max="100" value="100" onchange="prepUpdateTagsBox()" >
+                        <div id='releaseArtistsSliderValue'></div>
+                  </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="checkbox" class='releaseInfoCheckbox' id="releaseInfoCheckbox" checked onchange="prepUpdateTagsBox()">
+                    </td>
+                    <td>Release Info</td>
+                    <td>
+                        <input type="range" class='releaseInfoSlider' id='releaseInfoSlider' min="0" max="100" value="100" onchange="prepUpdateTagsBox()">
+                        <div id='releaseInfoSliderValue'></div>
+                    </td>
+                </tr>
+                <tr>
+                        <td>
+                            <input type="checkbox" class='tracklistCheckbox' id="tracklistCheckbox" checked  onchange="prepUpdateTagsBox()">
+                        </td>
+                        <td>Tracklist</td>
+                        <td>
+                            <input type="range" class='tracklistSlider' id='tracklistSlider' min="0" max="100" value="100" onchange="prepUpdateTagsBox()">
+                            <div id='tracklistSliderValue'></div>
+                        </td>
+                </tr>
+                <!--
+                <tr>
+                        <td>
+                            <input type="checkbox" class='publisherNotesCheckbox' id="publisherNotesCheckbox" checked onchange="prepUpdateTagsBox()">
+                        </td>
+                        <td>Publisher / Notes</td>
+                        <td>
+                            <input type="range" class='publisherNotesSlider' id='publisherNotesSlider' min="0" max="100" value="100" onchange="prepUpdateTagsBox()">
+                            <div id='publisherNotesSliderValue'></div>
+                        </td>
+                </tr>
+                -->
+                <tr>
+                        <td>
+                            <input type="checkbox" class='combinationsCheckbox' id="combinationsCheckbox" checked onchange="prepUpdateTagsBox()">
+                        </td>
+                        <td>Combinations</td>
+                        <td>
+                            <input type="range" class='combinationsSlider' id='combinationsSlider' min="0" max="100" value="100" onchange="prepUpdateTagsBox()">
+                            <div id='combinationsSliderValue'></div>
+                        </td>
+                </tr>
+
+              </table>
+              
+    </div>
+    <br> <!--
+    <button id="refreshTags" type="button" >Refresh Tags</button> -->
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/atXlOrLm1TE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            
+    <div id="footerwrap">
+        <footer id="footer" class="pagewidth clearfix">
+
+
+            <div class="footer-text clearfix">
+                <p>Copyright 2019 Martin Barker</p>
+                <p><a href='https://github.com/MartinBarker/discogstagger'>Github</a></p>
+            </div>
+            </footer>
+        </div>
+
+
+</body>
+</html>

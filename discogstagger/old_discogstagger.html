@@ -1,0 +1,175 @@
+
+
+
+<script language="JavaScript" type="text/javascript" src="jquery-3.3.1.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script>
+
+<script type="text/javascript" src="script.js" defer></script>
+<script type="text/javascript" src="moment.min.js" defer></script>
+
+<!--
+    <link rel="stylesheet" id="themify-styles-css" href="discogstagger.css" type="text/css" media="all">
+
+-->
+<style type = text/css>
+
+    /*  header-bar   */
+    #navbar{
+        float:left;
+    }
+    #headerwrap{
+        margin-top: -12px;
+    }
+    #headerButtons{
+        margin-top: 12px;  
+        float:left;
+    }
+    #headerLinks{
+        color: #1f7bb6;  
+        
+        white-space:nowrap;
+    }
+    #siteName{
+        font-weight: bold;
+        color:black; 
+          
+    }
+
+    /*  main content styling  
+    #content{
+        margin-top: 100px;
+        margin-left: 5%;
+        text-align: center;
+        overflow: auto;
+    }
+*/
+    </style>
+
+    <!DOCTYPE html>
+
+
+ 
+
+
+    <html id='all' dir="ltr" lang="hu-HU"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Want to play your Youtube playlists in random order? Or mix several playlists together? Come on in. No registration required.">
+    
+    <title>discogstagger</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+    <meta name="viewport" content="width=100%, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+    
+    </head>
+    <link rel="icon" href="http://iconshow.me/media/images/ui/iOS7-optimized-icon/png/512/05.tag.png">
+    <body class="home blog" onload="load()">
+    
+    <div id="pagewrap">
+           
+        </div>
+      
+        
+        
+        
+    <div id="body" class="clearfix"> 
+        
+    <!-- layout -->
+    <div id="layout" >
+        <!-- content -->
+        <div id="content">			
+
+                        <div id="post-content">
+                            <h4 class="widgettitle"><strong>How to use:</strong></h4>
+                            
+                            <li>Input a discogs release URL like so : <a href = "https://www.discogs.com/Le-Car-Auto-Biography/release/41048">https://www.discogs.com/Le-Car-Auto-Biography/release/41048</a> and click 'submit' to generate a list of tags seperated by commas. </li>
+		
+                            <br>
+
+							<ul id="ulID">
+								<div class = 'want_to_change' id = "change_this"></div>
+					   		</ul>
+
+					   
+					   		<div>
+					   			<form>
+							 		Discogs release URL: <input type="text" name="url" id="urlInput"><br>
+							   		<input type="submit" value="Submit" onclick="return onLoadConfigPress(document.getElementById('urlInput').value)" >
+					   			</form>
+					   		</div>
+                               <br>
+                              
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/atXlOrLm1TE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            
+                        </div>
+    
+                        </ul>
+                    
+
+                        <!-- /.post-content -->
+						
+                            
+                </div>
+                <!-- /loops-wrapper -->
+    
+        </div>
+        <!-- /#content -->
+    
+            
+
+        <!-- /#sidebar -->
+    </div>
+
+    <aside id="sidebar">
+	
+        <div class="widget themify-most-commented">
+            <h4 class="widgettitle">Suggestion?</h4>
+            <ul class="feature-posts-list">
+                <li><a href="mailto:martinbarker99@gmail.com" target="_blank">Click here to send me an email.</a></li>
+            </ul>
+        </div>	
+        <div class="widget themify-most-commented">
+            <h4 class="widgettitle">Contribute</h4>
+            <ul class="feature-posts-list">
+                <li>View and contribute to this project on <a href="https://github.com/MartinBarker/discogstagger" target="_blank">Github</a></li>
+            </ul>
+        </div>		
+        
+
+    </aside>
+
+
+    <!-- /#layout -->
+    
+        </div>
+        <!-- /body -->
+            
+        <div id="footerwrap">
+            <footer id="footer" class="pagewidth clearfix">
+                <div class="footer-widgets clearfix">
+                    <div class="col3-1 first"></div>
+                    <div class="col3-1 "></div>
+                    <div class="col3-1 "></div>			  				
+                </div>
+    
+                <div class="footer-text clearfix">
+                    <p>Copyright © 2019 Martin Barker</a></p>
+ 
+                </div>
+                <!-- /footer-text --> 
+        
+            </footer>
+            <!-- /#footer --> 
+        </div>
+        <!-- /#footerwrap -->
+        
+    </div>
+    <!-- /#pagewrap -->
+    
+    
+    <!-- footer -->
+    
+    
+
