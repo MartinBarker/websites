@@ -1,0 +1,228 @@
+
+
+
+<style type = text/css>
+
+    #site-description{
+        font-size: 90px;
+        font-weight: bold;
+    }
+
+    #sidebar{
+        
+        margin-top: -130%;
+        /*
+        margin-bottom: -33px;
+        */
+        font-size: 15px;
+    }
+
+    #all{
+        font-size: 18px;
+    }
+    
+    #post-content{
+        margin-top: -4%;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    #main-nav-list{
+        float:left;         
+    }
+
+    #ProjInfo{
+        font-size: 17px;
+        
+    }
+
+    #header{
+        margin-top: 8px;
+    }
+
+    #main-nav{
+        margin-left:22px;
+        
+        
+    }
+    
+    #headerwrap{
+        margin-top: -12px;
+        overflow:hidden;
+    }
+    
+    #site-logo{ 
+        font-weight: bold;
+    }  
+    
+#content{
+    margin-top: 50px;
+}
+#headerLinks{
+        color: #1f7bb6;   
+    }
+
+    #headerButtons{
+        margin-top: 12px;
+        
+        float:center;
+    }
+
+    #mainThing{
+        font-weight: bold;
+        color:black;  
+           
+    }
+    </style>
+    
+    
+    
+    <!DOCTYPE html>
+    
+        <nav class="navbar navbar-inverse navbar-fixed-top accented">
+        <!-- Styling for navbar -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a class="navbar-brand" id='websiteTitle'>Martin Barker</a>
+            
+        </div>
+    
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="http://martinbarker.me">Home</a></li>
+    
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="http://martinbarker.me/projects">all projects</a></li>
+                        <li><a href="http://martinbarker.me/tagger">tagger</a></li>
+                        <li><a href='http://martinbarker.me/discogstagger'>discogstagger</a></li>
+                        <li><a href="http://decentralizedplaylist.com">decentralizedplaylist</a></li>
+                        <li><a href="https://github.com/MartinBarker/VLC-Radio">VLC Streaming Metadata</a></li>
+                        <li><a href="https://github.com/MartinBarker/VLC-Playlist-Randomizer">VLC Playlist Randomizer</a></li>
+                    </ul>
+                </li>
+    
+                <link rel="stylesheet"
+                    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+                <li><a href="https://github.com/MartinBarker">Github <i class="fa fa-github"></i></a></li>
+                <li><a href="mailto:martinbarker99@gmail.com">Email <i class="fa fa-envelope-o"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/martinbarker99">LinkedIn <i class="fa fa-linkedin-square"></i></a>
+                </li>
+                <li><a href="http://youtube.com/c/martinradio2">YouTube <i
+                            class="fa fa-youtube"></i></a></li>
+                <li><a href="http://www.martinradio.com">martinradio <i class="fa fa-music"></i></a></li>
+    
+            </ul>
+    
+        </div>
+    
+    </nav>
+
+    <html id='all' dir="ltr" lang="hu-HU"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Want to play your Youtube playlists in random order? Or mix several playlists together? Come on in. No registration required.">
+    
+    <title>Martin Barker</title>
+ 
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+    <!-- header -->
+    <link rel="stylesheet" id="themify-styles-css" href="tagger_style.css" type="text/css" media="all">
+    <link rel="stylesheet" id="themify-media-queries-css" href="./Shuffle or mix your Youtube playlists_files/media-queries.css" type="text/css" media="all">
+    <meta name="viewport" content="width=100%, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+    
+    </head>
+    <link rel="icon" href="https://cdn1.iconfinder.com/data/icons/instagram-ui-glyph/48/Sed-09-256.png">
+    <body class="home blog" onload="load()">
+    
+    <div id="pagewrap">
+    
+        <!--
+        <div id="headerwrap">
+    
+            <header id="header" class="pagewidth">
+                <hgroup >
+                    <h1 id="site-logo"><a href="https://www.linkedin.com/in/martinbarker99">Martin Barker</a></h1>	
+                    <h2 id="site-description">It's who I am.</h2>
+                </hgroup>
+        
+                <div id='headerOptions'>
+                    <ul id="main-nav" class="main-nav clearfix">
+                        <li id="main-nav-list">
+                            <a id="main-nav-list" href="/website/home.html">About Me</a>
+                            <a id="main-nav-list" href="/website/">Projects</a>
+                            
+                        </li>
+                                                                                    
+                    </ul> 
+                </div>
+        
+            </header>
+            
+                    
+        </div>
+         -->
+        
+        
+        
+    <div id="body" class="clearfix"> 
+        
+    <!-- layout -->
+    <div id="layout" class="pagewidth clearfix sidebar1">
+        <!-- content -->
+        <div id="content">			
+
+                        <div id="post-content">
+                                <img src="https://i.imgur.com/AUxuihj.jpg" class="img-responsive img-profile center-block" alt="Profile" align="middle" height="300" width="300">
+                            <br>
+                            <li>4th-year Computer Science / Cybersecurity student at Oregon State University graduating June 2019.</li>
+                            <li>I currently work as QA Intern at <a href="https://moxiworks.com/">MoxiWorks</a> in Seattle [Summer 2018 - Present]</li>
+                            <li>I worked part time as Student Engineer for OSU's Radio / TV station <a href="http://www.orangemedianetwork.com/">KBVR FM/TV</a> from 2016 to 2018.</li>
+                            <li>I've been a DJ at KBVR FM for the past 4 years, and in my spare time upload records online and work on projects to benefit the online music community.</li>
+                            <br>
+				<!--
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/uLshIttwZSI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            -->
+                        </div>
+    
+                        </ul>
+                    
+
+                        <!-- /.post-content -->
+						
+                            
+                </div>
+                <!-- /loops-wrapper -->
+    
+        </div>
+        <!-- /#content -->
+    
+            
+        <aside id="sidebar">
+	
+
+  
+    
+        </aside>
+        <!-- /#sidebar -->
+    </div>
+    <!-- /#layout -->
+    
+        </div>
+        <!-- /body -->
+            
+
+    
+    

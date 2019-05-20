@@ -1,0 +1,62 @@
+
+    #site-description{
+        font-size: 90px;
+        font-weight: bold;
+    }
+
+    #sidebar{
+        margin-top: -50%;
+        margin-bottom: -33px;
+        font-size: 15px;
+    }
+
+    #all{
+        font-size: 18px;
+    }
+    
+    #content{
+        margin-top: 90px;
+    }
+
+    #post-content{
+        margin-top: -4%;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    #main-nav-list{
+        float:left;         
+    }
+
+    #header{
+        margin-top: 8px;
+    }
+
+    #main-nav{
+        margin-left:22px;
+        
+    }
+    
+    #headerwrap{
+        margin-top: -12px;
+        overflow:hidden;
+    }
+    
+    #site-logo{ 
+        font-weight: bold;
+    }  
+    #headerLinks{
+        color: #1f7bb6;   
+    }
+
+    #mainThing{
+        font-weight: bold;
+        color:black;  
+           
+    }
+
+    #headerButtons{
+        margin-top: 12px;
+        
+        float:center;
+    }
